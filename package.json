@@ -1,7 +1,7 @@
 {
-  "name": "ci-utils-plugin",
+  "name": "issues-plugin",
   "version": "1.0.0",
-  "description": "ci-utils-plugin插件包",
+  "description": "issues-plugin",
   "type": "module",
   "main": "index.js",
   "scripts": {

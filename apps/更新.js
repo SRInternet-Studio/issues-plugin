@@ -18,7 +18,7 @@ export class Update extends plugin {
     async update(e) {
         if (!e.isMaster) return;
         if (e.at && !e.atme) return;
-        e.msg = `#${e.msg.includes("强制") ? "强制" : ""}更新ci-utils-plugin`;
+        e.msg = `#${e.msg.includes("强制") ? "强制" : ""}更新issues-plugin`;
         const up = new Update(e);
         up.e = e;
         return up.update();
