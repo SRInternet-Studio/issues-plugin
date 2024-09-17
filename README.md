@@ -1,5 +1,5 @@
 # issues-plugin
-ClassIsland 官方 QQ 机器人使用的适用于 Yunzai 系机器人的一系列小工具的整合插件。
+适用于 Yunzai 系机器人的特定仓库 Issues 获取插件。
 
 ## 如何安装？
 ``` 不安装 ```
