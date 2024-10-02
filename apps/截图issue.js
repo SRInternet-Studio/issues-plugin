@@ -15,6 +15,10 @@ export class Screenshot extends plugin {
     }
 
     async Screenshot(e) {
+        if (e.group_id != 1009537078 || e.group_id != 680019081)
+        {
+            return;
+        }
         let match = [...new Set(e.msg.match(/\d+/g).map(i => Number(i)))];
         logger.info(match);
 
