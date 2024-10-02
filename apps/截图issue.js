@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer";
-// let RepoAddr = "ClassIsland/ClassIsland"
+let RepoAddr = ""
 
 // 群聊白名单及对应仓库
 const RepoAddrs = {
@@ -30,7 +30,7 @@ export class Screenshot extends plugin {
         // 检测群聊白名单
         if (e.group_id in RepoAddrs)
         {
-            let RepoAddr = RepoAddrs[e.group_id];
+            RepoAddr = RepoAddrs[e.group_id];
         }
         else
         {
