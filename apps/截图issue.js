@@ -16,7 +16,7 @@ export class Screenshot extends plugin {
 
     async Screenshot(e) {
         console.log(e.group_id);
-        if (e.group_id != "1009537078" || e.group_id != "680019081")
+        if (e.group_id != "1009537078" && e.group_id != "680019081")
         {
             return;
         }
