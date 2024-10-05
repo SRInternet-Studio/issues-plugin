@@ -38,13 +38,6 @@ export class Screenshot extends plugin {
         }
 
 
-        let match = [...new Set(e.msg.match(/\d+/g).map(i => Number(i)))];
-        logger.info(match);
-
-        if (!match.length) {
-            return e.reply('你好像没有输入内容');
-        }
-
         const browser = await puppeteer.launch({
             args: [
                 "--disable-gpu",
@@ -54,7 +47,7 @@ export class Screenshot extends plugin {
             ]
         });
 
-        let res = await Promise.all(match.map(async () => {
+        let res = await Promise.all(match.map(async (issue) => {
             await e.reply(`开始截图`)
             const url = `https://github.com/${RepoAddr}/issues/`;
             const page = await browser.newPage();
