@@ -14,7 +14,7 @@ export class Screenshot extends plugin {
             des: '截图',
             event: 'message',
             rule: [{
-                reg: /^(\/|#|!|！)issue/i,
+                reg: /^(\/|#|!|！)lissue/i,
                 fnc: 'Screenshot'
             }],
         });
@@ -38,7 +38,7 @@ export class Screenshot extends plugin {
         }
 
 
-        let match = [...new Set(e.msg.match(/\d+/g).map(i => Number(i)))];
+        let match = [123456];
         logger.info(match);
 
         if (!match.length) {
@@ -55,8 +55,8 @@ export class Screenshot extends plugin {
         });
 
         let res = await Promise.all(match.map(async (issue) => {
-            await e.reply(`[${issue}] 开始截图`)
-            const url = `https://github.com/${RepoAddr}/issues/${String(issue)}`;
+            await e.reply(`开始截图`)
+            const url = `https://github.com/${RepoAddr}/issues/`;
             const page = await browser.newPage();
             await page.setViewport({ width: 1280, height: 800 });
 
@@ -64,7 +64,7 @@ export class Screenshot extends plugin {
                 await page.goto(url, { waitUntil: 'networkidle0', timeout: 20000 });
             } catch (error) {
                 if (error.message.includes('timeout')) {
-                    e.reply(`${String(issue)}直连超时，尝试使用代理获取......`);
+                    e.reply(`直连超时，尝试使用代理获取......`);
                     await page.goto('https://kkgithub.com/' + url, { waitUntil: 'networkidle0', timeout: 15000 });
                 }
             }
