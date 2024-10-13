@@ -3,6 +3,7 @@ let RepoAddr = ""
 
 // 群聊白名单及对应仓库
 const RepoAddrs = {
+    958840932: "ClassIsland/ClassIsland",
     1009537078: "ClassIsland/ClassIsland",
     680019081: "Sticky-attention/Sticky-attention"
 }
